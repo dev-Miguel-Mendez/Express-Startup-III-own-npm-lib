@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { LoginSchemaType, SignupSchemaType } from '../../zodSchemas/user-schema.js';
-import { BadRequest } from 'custom-exceptions';
+import { BadRequest } from 'custom-exceptions-express';
 
 
 export const signup = async (req: Request<{}, {}, SignupSchemaType>,res: Response) => {

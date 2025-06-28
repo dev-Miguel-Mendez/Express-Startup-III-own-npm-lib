@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { AnyZodObject, ZodError } from 'zod';
-import { AppError, InternalException, UnprocessableEntity } from 'custom-exceptions';
+import { AppError, InternalException, UnprocessableEntity } from 'custom-exceptions-express';
 
 //prettier-ignore
 type ControllerFunction = (req: Request<any>, res: Response,next: NextFunction) => Promise<void>;

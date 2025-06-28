@@ -4,7 +4,7 @@ import express, { RequestHandler} from 'express';
 import { router as usersRouter } from './routes/users-router.js';
 import { router as loggerRouter } from './routes/logger-router.js';
 import {reqLogger} from 'req-logger-express'
-import {errorMiddleware} from 'custom-exceptions'
+import {errorMiddleware} from 'custom-exceptions-express'
 
 
 const app = express();
