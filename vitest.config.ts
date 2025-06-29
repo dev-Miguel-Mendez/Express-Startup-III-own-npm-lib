@@ -14,5 +14,6 @@ export default defineConfig({
             concurrent: false, 	//$ Concurrency within a SINGLE test file
             shuffle: false //$ Avoids random test order within a file
         }
-    }
+    },
+    // include: ['tests/socket-io-three.test.ts', 'tests/api.test.ts'],
 })
