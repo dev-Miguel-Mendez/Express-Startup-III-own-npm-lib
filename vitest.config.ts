@@ -1,20 +1,18 @@
-import { defineConfig } from 'vitest/config';
+import {defineConfig} from 'vitest/config'
+
 
 console.log('Vitest configuration loaded! 12345');
 
-export default defineConfig({
-	test: {
-		// coverage: {
-		//   reporter: ['html', 'text'],
-		// },
-		globals: true,
-		fileParallelism: false,
-		// setupFiles: ['./tests/testsetup.ts'], //* Path to your setup file
-		sequence: {
-			shuffle: false, // Ensure tests are not shuffled
-			concurrent: false, // Ensure tests run one after another
-		},
 
-		// include: ['tests/socket-io-three.test.ts', 'tests/api.test.ts'],
-	},
-});
+export default defineConfig({
+    test: {
+        // setupFiles: ['./tests/testsetup.ts'], //$ Path to your setup file
+        globals: true, //$ enables global test methods as describe, it, expect, etc., without needing to import them explicitly in every test file.
+        fileParallelism: false, //$ Avoids random test order across different test files.
+
+        sequence:{
+            concurrent: false, 	//$ Concurrency within a SINGLE test file
+            shuffle: false //$ Avoids random test order within a file
+        }
+    }
+})
