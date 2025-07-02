@@ -5,4 +5,4 @@ services:
       - "3001:3001"
     command: npm run dev_docker
     volumes:
-      - "./src:/app/src:ro"
+      - "./src:/app/src" #! Not readonly.   Avoid it if you plan on using prisma which generates the client in the src folder. 
