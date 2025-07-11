@@ -6,13 +6,18 @@ import { BadRequest } from 'custom-exceptions-express';
 export const signup = async (req: Request<{}, {}, SignupSchemaType>,res: Response) => {
 	const { username, email, password } = req.body;
 
-	res.send({ message: 'Success', data: { username, email, password } });
+
+	const response: ServerResponse = { message: 'Success', success: true, data: { username, email, password } } 
+
+	res.send(response );
 };
 
 export const signin = async (req: Request<{}, {}, LoginSchemaType>, res: Response) => {
 	const { email, password } = req.body;
     
-	res.send({ message: 'Success', data: { email, password } });
+	const response: ServerResponse = { message: 'Success', success: true, data: { email, password } }
+
+	res.send(response);
 };
 
 export const triggerBadRequest = async (_req: Request, _res: Response) => {
@@ -20,3 +25,4 @@ export const triggerBadRequest = async (_req: Request, _res: Response) => {
     throw new BadRequest('Bad request');
 
 };
+
