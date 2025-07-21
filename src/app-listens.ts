@@ -2,7 +2,7 @@ import app from "./app-setup.js";
 
 
 //* Start Express server
-const port = process.env.PORT 
+const port = process.env.PORT || 3001 //% It is very likely that it will default to 3001 since I'm no longer specifying as an environment variable.
 
 app.listen(port, () => {
     console.log('Server started on port ' + port);
